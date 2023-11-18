@@ -1,0 +1,127 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "MKF HUB | Muscle Legends 💪", HidePremium = false,IntroText = "MKF HUB", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Map",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Eternal Gym",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-6842, 4, -1281))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Frost Gym",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-2691, 4, -357))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Mythical Gym",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(2343, 4, 1041))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Legends Gym",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(4505, 988, -3854))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Muscle King Gym",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-8617, 14, -5740))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Spawn",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(3, 4, 118))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Island",
+	Callback = function()
+      		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-287, 38, 804))
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Farming",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Activate auto farm (Weight)",
+Callback = function()
+local a = true
+local rs = game:GetService("RunService").RenderStepped
+if a == true then
+while rs:wait() do
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.ClassName == "Tool" and v.Name == "Weight" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+end
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Disable auto farm (Weight)",
+	Callback = function()
+      		local a = false
+local rs = game:GetService("RunService").RenderStepped
+if a == true then
+while rs:wait() do
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.ClassName == "Tool" and v.Name == "Weight" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+end
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto farm Gui (Rock)",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/harisiskandar178/Roblox-Script/main/Muscle%20Legend'))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Extra",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Infiniteyield",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+OrionLib:MakeNotification({
+	Name = "Muscle Legends 💪",
+	Content = "Enjoy!!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
