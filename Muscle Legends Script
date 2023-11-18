@@ -66,17 +66,18 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Activate auto farm (Weight)",
 Callback = function()
-local a = true
-local rs = game:GetService("RunService").RenderStepped
-if a == true then
-while rs:wait() do
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if v.ClassName == "Tool" and v.Name == "Weight" then
-v.Parent = game.Players.LocalPlayer.Character
-end
-end
-game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
-end
+_G.automuscle = true;
+
+while _G.automuscle ==  true do
+
+local args = {
+    [1] = "rep"
+    
+}
+
+game:GetService("Players").LocalPlayer.muscleEvent:FireServer(unpack(args))
+
+   wait()
 end
   	end    
 })
@@ -84,23 +85,24 @@ end
 Tab:AddButton({
 	Name = "Disable auto farm (Weight)",
 	Callback = function()
-      		local a = false
-local rs = game:GetService("RunService").RenderStepped
-if a == true then
-while rs:wait() do
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if v.ClassName == "Tool" and v.Name == "Weight" then
-v.Parent = game.Players.LocalPlayer.Character
-end
-end
-game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
-end
+      		_G.automuscle = false;
+
+while _G.automuscle ==  true do
+
+local args = {
+    [1] = "rep"
+    
+}
+
+game:GetService("Players").LocalPlayer.muscleEvent:FireServer(unpack(args))
+
+   wait()
 end
   	end    
 })
 
 Tab:AddButton({
-	Name = "Auto farm Gui (Rock)",
+	Name = "Auto farm Gui (Rock/Weight)",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/harisiskandar178/Roblox-Script/main/Muscle%20Legend'))()
   	end    
