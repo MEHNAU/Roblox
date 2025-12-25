@@ -33,12 +33,12 @@ if not _G.Settings then
         },
         Explosions = {
             Smaller = false,
-            Invisible = false, -- Not recommended for PVP games
-            Destroy = true -- Not recommended for PVP games
+            Invisible = true, -- Not recommended for PVP games
+            Destroy = false -- Not recommended for PVP games
         },
         Particles = {
-            Invisible = false,
-            Destroy = true
+            Invisible = true,
+            Destroy = false
         },
         TextLabels = {
             LowerQuality = false,
